@@ -30,7 +30,11 @@ export const getMatchesController = async (req, res) => {
       console.log("req.query.tournamentId",req.query.tournamentId);
       
       const result = await updateMatchService(req.query.tournamentId,req.body);
-      res.status(200).json({ success: true, data: result });
+      res.status(200).json(
+        { success: true,
+         data: result
+         }
+        );
     } catch (error) {
       res.status(400).json({ success: false, message: error.message });
     }
