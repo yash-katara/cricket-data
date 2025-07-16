@@ -1,4 +1,21 @@
 
 <div class="main">
+    <div class="login">
+        <h1>User Login</h1>
+         <p class="error-p">{{ authError }}</p>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="common-form">
+      <input
+        type="text"  maxlength="20" class="form-input" placeholder="Enter userId" formControlName="userId" required
+      />
+      <input
+        type="password" maxlength="16" class="form-input"  placeholder="Enter Password" formControlName="password"  required
+      />
+      <button class="form-button" type="submit" [disabled]="loginForm.invalid">
+        Login
+      </button>
+
+      <p style="font-size: 16px;color: red;">{{isError}}</p>
+    </form>
+    </div>
     
 </div>
