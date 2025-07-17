@@ -71,9 +71,9 @@ const matchService = async(matchdata)=>{
     let AGroup = awayTeamDoc?.group
     
 
-    const homeMatchNumberByGroup = await Match.countDocuments({homeTeam:new Types.ObjectId(homeTeam) , homeGroup: hGroup }) + 1;
+    const homeMatchNumberByGroup = await Match.countDocuments({homeTeam:new Types.ObjectId(homeTeam) , homeGroup: hgroup }) + 1;
     const awayMatchNumberByGroup = await Match.countDocuments({awayTeam:new Types.ObjectId(awayTeam) , awayGroup: AGroup }) + 1;
-    const matchNumberByGroup = await Match.countDocuments({ group: hGroup }) + 1;
+    const matchNumberByGroup = await Match.countDocuments({ group: hgroup }) + 1;
 
     const venue = {
       venue_name:homeTeamDoc?.venue1,
