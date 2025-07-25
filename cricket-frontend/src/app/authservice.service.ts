@@ -17,4 +17,14 @@ private baseUrl = 'http://localhost:2000/api/v2'
   login(userId: string, password: string):Observable<any>  {
     return this.http.post(`${this.baseUrl}/auth/login`, { userId, password });
   }
+
+  verifyOtp(obj:any){
+    return this.http.post(`${this.baseUrl}/auth/verify`, obj);
+  }
+
+  resendOtp(obj:any){
+    return this.http.post(`${this.baseUrl}/auth/resend-Otp`, obj);
+  }
+
+
 }

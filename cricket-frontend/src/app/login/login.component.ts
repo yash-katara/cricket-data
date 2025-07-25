@@ -10,6 +10,8 @@ import { AuthserviceService } from '../authservice.service';
 })
 export class LoginComponent {
 loginForm!: FormGroup;
+otpForm!: FormGroup;
+isOtpDiv = false;
 authError: string = '';
 isError: any = "";
 
@@ -20,6 +22,10 @@ ngOnInit() {
       userId: new FormControl('', [Validators.required, Validators.maxLength(20)]),
       password: new FormControl('', [Validators.required,Validators.maxLength(16)])
     });
+
+    this.otpForm = new FormGroup({
+      otp: new FormControl('', [Validators.required, Validators.maxLength(4)])
+    });
   }
 login() {
   if(this.loginForm.valid) {
@@ -27,7 +33,8 @@ login() {
    
 
 
-    ;
+
+    
   }
 }
 
